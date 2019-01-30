@@ -35,7 +35,7 @@ public class httpapi extends HttpServlet {
             throws ServletException, IOException {
         
         response.setContentType("text/html;charset=UTF-8");
-        String url = "https://portalpulsa.com/api/connect/";
+        String url = "http://local.lintasmediatelekom.id/api/v1/";
         String urlParameters = "inquiry=S";
         byte[] postData = urlParameters.getBytes(StandardCharsets.UTF_8);
 
@@ -46,9 +46,9 @@ public class httpapi extends HttpServlet {
 
             con.setDoOutput(true);
             con.setRequestMethod("POST");
-            con.setRequestProperty("portal-userid", "P73611");
-            con.setRequestProperty("portal-key", "8ee9fe423579bb906e57b9cad0eb8329");
-            con.setRequestProperty("portal-secret", "89933f46c8192409a59417a92c254e4e8b4fbdbc97855042f2aa83beb854155b");
+            con.setRequestProperty("portal-userid", "");
+            con.setRequestProperty("portal-key", "");
+            con.setRequestProperty("portal-secret", "");
 
             try (DataOutputStream wr = new DataOutputStream(con.getOutputStream())) {
                 wr.write(postData);
